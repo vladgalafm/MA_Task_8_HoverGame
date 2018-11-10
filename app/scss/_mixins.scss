@@ -1,0 +1,60 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transition-property($property...) {
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -o-transition-property: $property;
+  transition-property: $property;
+}
+
+@mixin transition-duration($duration) {
+  -webkit-transition-property: $duration;
+  -moz-transition-property: $duration;
+  -o-transition-property: $duration;
+  transition-property: $duration;
+}
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin box-position {
+  @for $i from 1 through 5 {
+    &--row-#{$i} {
+      top: 150px + ($i - 1) * ($box-size * 3/2);
+    }
+  }
+  @for $i from 1 through 12 {
+    &--col-#{$i} {
+      left: 50px + ($i - 1) * ($box-size * 3/2);
+    }
+  }
+}
+
+@mixin radius-box-position {
+  @for $i from 1 through 5 {
+    &--row-#{$i} {
+      top: (150px - ($radius-box-size - $box-size) / 2) + ($i - 1) * ($box-size * 3/2);
+    }
+  }
+  @for $i from 1 through 12 {
+    &--col-#{$i} {
+      left: (50px - ($radius-box-size - $box-size) / 2) + ($i - 1) * ($box-size * 3/2);
+    }
+  }
+}
