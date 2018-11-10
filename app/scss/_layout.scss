@@ -65,25 +65,29 @@ body {
     position: absolute;
     width: $box-size;
     height: $box-size;
+    border: 2px solid transparent;
     @include border-radius(1px);
-    background-color: $box-color;
     @include box-position;
   }
   &__box:hover {
     background-color: $hover-color;
   }
   &__box:not(:hover) {
-    @include transition(background-color 4s ease-in-out);
+    background-color: $box-color;
+    @include transition(background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s);
   }
   &__input:checked ~ &__box {
     width: $radius-box-size;
     height: $radius-box-size;
     border: 2px solid $hover-color;
     @include border-radius(50%);
-    background-color: transparent;
     @include radius-box-position;
   }
   &__input:checked ~ &__box:hover {
     background-color: $hover-color;
+  }
+  &__input:checked ~ &__box:not(:hover) {
+    background-color: transparent;
+    @include transition(background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s);
   }
 }

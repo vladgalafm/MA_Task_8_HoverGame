@@ -4,25 +4,11 @@
   border-radius: $radius;
 }
 
-@mixin transition($transition) {
+@mixin transition($transition...) {
   -webkit-transition: $transition;
   -moz-transition: $transition;
   -o-transition: $transition;
   transition: $transition;
-}
-
-@mixin transition-property($property...) {
-  -webkit-transition-property: $property;
-  -moz-transition-property: $property;
-  -o-transition-property: $property;
-  transition-property: $property;
-}
-
-@mixin transition-duration($duration) {
-  -webkit-transition-property: $duration;
-  -moz-transition-property: $duration;
-  -o-transition-property: $duration;
-  transition-property: $duration;
 }
 
 @mixin transform($transforms) {

@@ -31,7 +31,7 @@ body {
   font-size: 32px;
   font-weight: bold;
   font-style: italic;
-  color: #333333;
+  color: #555555;
   line-height: 35px;
 }
 
@@ -97,10 +97,10 @@ body {
   position: absolute;
   width: 60px;
   height: 60px;
+  border: 2px solid transparent;
   -webkit-border-radius: 1px;
   -moz-border-radius: 1px;
   border-radius: 1px;
-  background-color: #000000;
 }
 
 .container__box--row-1 {
@@ -176,10 +176,11 @@ body {
 }
 
 .container__box:not(:hover) {
-  -webkit-transition: background-color 4s ease-in-out;
-  -moz-transition: background-color 4s ease-in-out;
-  -o-transition: background-color 4s ease-in-out;
-  transition: background-color 4s ease-in-out;
+  background-color: #000000;
+  -webkit-transition: background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s;
+  -moz-transition: background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s;
+  -o-transition: background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s;
+  transition: background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s;
 }
 
 .container__input:checked ~ .container__box {
@@ -189,7 +190,6 @@ body {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  background-color: transparent;
 }
 
 .container__input:checked ~ .container__box--row-1 {
@@ -262,4 +262,12 @@ body {
 
 .container__input:checked ~ .container__box:hover {
   background-color: #f1c507;
+}
+
+.container__input:checked ~ .container__box:not(:hover) {
+  background-color: transparent;
+  -webkit-transition: background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s;
+  -moz-transition: background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s;
+  -o-transition: background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s;
+  transition: background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s;
 }
