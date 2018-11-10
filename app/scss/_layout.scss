@@ -73,7 +73,7 @@ body {
     background-color: $hover-color;
   }
   &__box:not(:hover) {
-    @include transition(all 5s ease-in-out);
+    @include transition(background-color 4s ease-in-out);
   }
   &__input:checked ~ &__box {
     width: $radius-box-size;
