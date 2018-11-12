@@ -4,87 +4,99 @@ body {
 
 .container {
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: (2 * 50px) + (17.5 * $box-size);
   height: (150px + 50px) + (7 * $box-size);
   margin: 0 auto;
-  padding-top: 25px;
-  padding-right: 50px;
-  top: 50%;
-  left: 50%;
-  @include transform(translate(-50%, -50%));
+  padding: 25px 50px;
   text-align: right;
+  @include transform(translate(-50%, -50%));
+
   &__label {
     font-family: $font-check;
     font-size: 32px;
     font-weight: bold;
     font-style: italic;
-    color: $font-color;
     line-height: 35px;
+    color: $font-color;
   }
+
   &__input {
     position: absolute;
     left: -9999px;
   }
+
   &__input + &__label {
-    display: inline-block;
     position: relative;
+    display: inline-block;
     padding-left: 35px;
     cursor: pointer;
   }
+
   &__input + &__label::before {
-    content: "";
     position: absolute;
-    @include transition(all 0.15s ease);
+    content: "";
     left: 0;
     top: 10px;
     width: 20px;
     height: 20px;
-    @include border-radius(50%);
     background-color: #ffffff;
+    @include border-radius(50%);
+    @include transition(all 0.15s ease);
   }
+
   &__input:checked + &__label::before {
     background-color: #389afc;
   }
+
   &__input + &__label::after {
-    content: "";
     position: absolute;
-    @include transition(all 0.15s ease);
+    content: "";
     left: 4px;
     top: 15px;
     width: 9px;
     height: 5px;
     border-left: 3px solid #ffffff;
     border-bottom: 3px solid #ffffff;
-    @include transform(rotate(-45deg));
     opacity: 0;
+    @include transition(all 0.15s ease);
+    @include transform(rotate(-45deg));
   }
+
   &__input:checked + &__label::after {
     opacity: 1;
   }
+
   &__box {
     position: absolute;
     width: $box-size;
     height: $box-size;
     border: 2px solid transparent;
-    @include border-radius(1px);
     @include box-position;
+    @include border-radius(1px);
+
     &:hover {
       background-color: $hover-color;
     }
+
     &:not(:hover) {
       background-color: $box-color;
       @include transition(background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s);
     }
   }
+
   &__input:checked ~ &__box {
     width: $radius-box-size;
     height: $radius-box-size;
     border: 2px solid $hover-color;
     @include border-radius(50%);
     @include radius-box-position;
+
     &:hover {
       background-color: $hover-color;
     }
+
     &:not(:hover) {
       background-color: transparent;
       @include transition(background-color 4s, border 1s, border-radius 1s, height 1s, width 1s, top 1s, left 1s);

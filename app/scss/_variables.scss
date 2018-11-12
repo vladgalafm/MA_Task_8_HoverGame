@@ -4,4 +4,4 @@ $hover-color: #f1c507;
 $font-color: #555555;
 $font-check: 'Arial Black', 'Gadget', sans-serif;
 $box-size: 60px;
-$radius-box-size: 140px;
+$radius-box-size: $box-size * 7 / 3;

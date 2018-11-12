@@ -11,19 +11,18 @@ body {
 
 .container {
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: 1150px;
   height: 620px;
   margin: 0 auto;
-  padding-top: 25px;
-  padding-right: 50px;
-  top: 50%;
-  left: 50%;
+  padding: 25px 50px;
+  text-align: right;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  text-align: right;
 }
 
 .container__label {
@@ -31,8 +30,8 @@ body {
   font-size: 32px;
   font-weight: bold;
   font-style: italic;
-  color: #555555;
   line-height: 35px;
+  color: #555555;
 }
 
 .container__input {
@@ -41,27 +40,27 @@ body {
 }
 
 .container__input + .container__label {
-  display: inline-block;
   position: relative;
+  display: inline-block;
   padding-left: 35px;
   cursor: pointer;
 }
 
 .container__input + .container__label::before {
-  content: "";
   position: absolute;
-  -webkit-transition: all 0.15s ease;
-  -moz-transition: all 0.15s ease;
-  -o-transition: all 0.15s ease;
-  transition: all 0.15s ease;
+  content: "";
   left: 0;
   top: 10px;
   width: 20px;
   height: 20px;
+  background-color: #ffffff;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  background-color: #ffffff;
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .container__input:checked + .container__label::before {
@@ -69,24 +68,24 @@ body {
 }
 
 .container__input + .container__label::after {
-  content: "";
   position: absolute;
-  -webkit-transition: all 0.15s ease;
-  -moz-transition: all 0.15s ease;
-  -o-transition: all 0.15s ease;
-  transition: all 0.15s ease;
+  content: "";
   left: 4px;
   top: 15px;
   width: 9px;
   height: 5px;
   border-left: 3px solid #ffffff;
   border-bottom: 3px solid #ffffff;
+  opacity: 0;
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease;
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  opacity: 0;
 }
 
 .container__input:checked + .container__label::after {

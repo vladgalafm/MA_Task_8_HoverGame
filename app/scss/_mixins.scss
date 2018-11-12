@@ -25,6 +25,7 @@
       top: 150px + ($i - 1) * ($box-size * 3/2);
     }
   }
+
   @for $i from 1 through 12 {
     &--col-#{$i} {
       left: 50px + ($i - 1) * ($box-size * 3/2);
@@ -38,6 +39,7 @@
       top: (150px - ($radius-box-size - $box-size) / 2) + ($i - 1) * ($box-size * 3/2);
     }
   }
+
   @for $i from 1 through 12 {
     &--col-#{$i} {
       left: (50px - ($radius-box-size - $box-size) / 2) + ($i - 1) * ($box-size * 3/2);
